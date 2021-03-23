@@ -96,7 +96,7 @@ custom_param_os="/mediabots/"$(ls /mediabots)
 custom_param_sw="/sw.iso"
 custom_param_virtio="/virtio/"$(ls /virtio)
 #
-custom_param_ram="-m "$(expr $availableRAM - 200 )"M"
+custom_param_ram="-m "$(expr $availableRAM - 2300 )"M"
 skipped=0
 partition=0
 other_drives=""
@@ -266,7 +266,7 @@ df
 sync; echo 3 > /proc/sys/vm/drop_caches
 free -m 
 availableRAM=$(echo $availableRAMcommand | bash)
-custom_param_ram="-m "$(expr $availableRAM - 200 )"M"
+custom_param_ram="-m "$(expr $availableRAM - 2300 )"M"
 custom_param_ram2="-m "$(expr $availableRAM - 2500 )"M"
 echo $custom_param_ram
 echo "[..] running QEMU-KVM again"
